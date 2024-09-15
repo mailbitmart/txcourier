@@ -538,6 +538,7 @@ function closeModal(modal) {
 }
 
 function changeStage(selectedStage) {
+	console.log(selectedStage)
 	for (let i = 0; i < orderStages.length; i++) {
 		orderStages[i].children[0].classList.add("text-primary");
 		orderStages[i].children[1].classList.replace(
