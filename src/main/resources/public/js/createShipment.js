@@ -404,16 +404,17 @@ function addShipment() {
 	let updateShipmentXhr = new XMLHttpRequest();
 	updateShipmentXhr.open("POST", "/shipment", true);
 	updateShipmentXhr.setRequestHeader("Content-type", "application/json");
-	updateShipmentXhr.send(JSON.stringify(shipment));
+	console.log(shipment)
+	// updateShipmentXhr.send(JSON.stringify(shipment));
 
-	updateShipmentXhr.onreadystatechange = function() {
-		if (this.status == 200 && this.readyState == 4) {
-			let response = JSON.parse(this.response);
-			location.replace(
-				`create-shipment.html?shipmentid=${response.shipmentId}`
-			);
-		}
-	};
+	// updateShipmentXhr.onreadystatechange = function() {
+	// 	if (this.status == 200 && this.readyState == 4) {
+	// 		let response = JSON.parse(this.response);
+	// 		location.replace(
+	// 			`create-shipment.html?shipmentid=${response.shipmentId}`
+	// 		);
+	// 	}
+	// };
 }
 
 function update() {
