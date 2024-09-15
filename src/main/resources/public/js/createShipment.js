@@ -153,7 +153,7 @@ function getShipment(shipmentId) {
 			} else if (response.shipmentStage.shipmentStageId == 2) {
 				shipmentStage = "dispatched";
 			} else if (response.shipmentStage.shipmentStageId == 3) {
-				shipmentStage = "middle-staged";
+				shipmentStage = "middle";
 			} else if (response.shipmentStage.shipmentStageId == 4) {
 				shipmentStage = "delivered";
 			}
