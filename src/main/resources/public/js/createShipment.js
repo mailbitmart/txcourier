@@ -351,7 +351,7 @@ function addShipment() {
 				orderStage2 = 1;
 			} else if (orderStageId == "dispatched") {
 				orderStage2 = 2;
-			} else if (orderStageId == "middle-staged") {
+			} else if (orderStageId == "middle") {
 				orderStage2 = 3;
 			} else if (orderStageId == "delivered") {
 				orderStage2 = 4;
@@ -404,17 +404,16 @@ function addShipment() {
 	let updateShipmentXhr = new XMLHttpRequest();
 	updateShipmentXhr.open("POST", "/shipment", true);
 	updateShipmentXhr.setRequestHeader("Content-type", "application/json");
-	console.log(shipment)
-	// updateShipmentXhr.send(JSON.stringify(shipment));
+	updateShipmentXhr.send(JSON.stringify(shipment));
 
-	// updateShipmentXhr.onreadystatechange = function() {
-	// 	if (this.status == 200 && this.readyState == 4) {
-	// 		let response = JSON.parse(this.response);
-	// 		location.replace(
-	// 			`create-shipment.html?shipmentid=${response.shipmentId}`
-	// 		);
-	// 	}
-	// };
+	updateShipmentXhr.onreadystatechange = function() {
+		if (this.status == 200 && this.readyState == 4) {
+			let response = JSON.parse(this.response);
+			location.replace(
+				`create-shipment.html?shipmentid=${response.shipmentId}`
+			);
+		}
+	};
 }
 
 function update() {
@@ -429,7 +428,7 @@ function update() {
 				orderStage2 = 1;
 			} else if (orderStageId == "dispatched") {
 				orderStage2 = 2;
-			} else if (orderStageId == "middle-staged") {
+			} else if (orderStageId == "middle") {
 				orderStage2 = 3;
 			} else if (orderStageId == "delivered") {
 				orderStage2 = 4;
