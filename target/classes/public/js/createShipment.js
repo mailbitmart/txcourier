@@ -153,7 +153,7 @@ function getShipment(shipmentId) {
 			} else if (response.shipmentStage.shipmentStageId == 2) {
 				shipmentStage = "dispatched";
 			} else if (response.shipmentStage.shipmentStageId == 3) {
-				shipmentStage = "middle-staged";
+				shipmentStage = "middle";
 			} else if (response.shipmentStage.shipmentStageId == 4) {
 				shipmentStage = "delivered";
 			}
@@ -351,7 +351,7 @@ function addShipment() {
 				orderStage2 = 1;
 			} else if (orderStageId == "dispatched") {
 				orderStage2 = 2;
-			} else if (orderStageId == "middle-staged") {
+			} else if (orderStageId == "middle") {
 				orderStage2 = 3;
 			} else if (orderStageId == "delivered") {
 				orderStage2 = 4;
@@ -428,7 +428,7 @@ function update() {
 				orderStage2 = 1;
 			} else if (orderStageId == "dispatched") {
 				orderStage2 = 2;
-			} else if (orderStageId == "middle-staged") {
+			} else if (orderStageId == "middle") {
 				orderStage2 = 3;
 			} else if (orderStageId == "delivered") {
 				orderStage2 = 4;
@@ -538,6 +538,7 @@ function closeModal(modal) {
 }
 
 function changeStage(selectedStage) {
+	console.log(selectedStage)
 	for (let i = 0; i < orderStages.length; i++) {
 		orderStages[i].children[0].classList.add("text-primary");
 		orderStages[i].children[1].classList.replace(
