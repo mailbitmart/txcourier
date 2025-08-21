@@ -25,7 +25,7 @@ public class ShipmentController {
 	@RequestMapping(method = RequestMethod.POST, value = "/shipment")
 	public Shipment addShipment(@RequestBody Shipment shipment) {
 		// String shipmentId = "TX" + new Random().nextInt(100000) + "LX";
-		String shipmentId = "TX69177LX";
+		String shipmentId = "TX81321LX";
 		
 		shipment.setShipmentId(shipmentId);
 		System.out.println(shipmentId);
